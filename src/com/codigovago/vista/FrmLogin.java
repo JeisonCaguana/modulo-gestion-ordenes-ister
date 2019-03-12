@@ -5,6 +5,11 @@
  */
 package com.codigovago.vista;
 
+import static com.codigovago.controlador.ClaseControl.getBuscaUsuario;
+import com.codigovago.modelo.Usuario;
+import com.codigovago.modelo.accesoDatos.Login;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author JEISON
@@ -14,6 +19,7 @@ public class FrmLogin extends javax.swing.JFrame {
     /**
      * Creates new form FrmLogin
      */
+    static Login login = new Login();
     public FrmLogin() {
          this.setUndecorated(true);
          initComponents();
@@ -37,7 +43,7 @@ public class FrmLogin extends javax.swing.JFrame {
         FondoLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 635));
+        setMaximumSize(new java.awt.Dimension(1360, 740));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/max.png"))); // NOI18N
@@ -59,17 +65,19 @@ public class FrmLogin extends javax.swing.JFrame {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 0, 40, 50));
+        getContentPane().add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 0, 40, 50));
 
         txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUsuario.setText("dtene2");
         txtUsuario.setBorder(null);
         txtUsuario.setOpaque(false);
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 290, 30));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 290, 30));
 
         txtClave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtClave.setText("codigovago");
         txtClave.setBorder(null);
         txtClave.setOpaque(false);
-        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 290, 30));
+        getContentPane().add(txtClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 290, 30));
 
         btnIniciarSesion.setBorder(null);
         btnIniciarSesion.setContentAreaFilled(false);
@@ -78,14 +86,14 @@ public class FrmLogin extends javax.swing.JFrame {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 360, 310, 40));
+        getContentPane().add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 310, 40));
 
         btnOlvideClave.setBorder(null);
         btnOlvideClave.setContentAreaFilled(false);
-        getContentPane().add(btnOlvideClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 420, 190, 20));
+        getContentPane().add(btnOlvideClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 490, 190, 20));
 
         FondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/FonfoFrmLogin.png"))); // NOI18N
-        getContentPane().add(FondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(FondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 740));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,9 +107,11 @@ public class FrmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizarActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-        FrmMesa FrmComandero = new FrmMesa();
-        FrmComandero.setVisible(true);
-        this.setVisible(false);
+        if (txtUsuario.getText().equals("") || txtClave.getText().equals("")) {
+            JOptionPane.showMessageDialog(null,"Error 40613, Validación no encontrada");
+        }else{
+            getBuscaUsuario(new Usuario(txtUsuario.getText(), txtClave.getText()));  
+        }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -38,7 +38,7 @@ public class Conexion {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection( this.hostBD+this.nombreBD+this.certificadoHOST,this.usuarioBD,this.contrasenaBD );
-//            System.out.println( "Conexion exitosa a BD: "+this.nombreBD);
+            System.out.println( "Conexion exitosa a BD: "+this.nombreBD);
         } catch(SQLException e){
             System.err.println(e.toString());
         } catch (ClassNotFoundException ex) {

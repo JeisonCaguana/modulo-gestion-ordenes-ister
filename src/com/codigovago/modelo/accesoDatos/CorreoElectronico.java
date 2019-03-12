@@ -14,7 +14,7 @@ import com.codigovago.modelo.Empleado;
  */
 public class CorreoElectronico {
     public void setCorreo(Empleado empleado){
-        System.out.println("Correo enviado a: "+empleado.getCorreo_emp());
+//        System.out.println("Correo enviado a: "+empleado.getCorreo_emp());
     }
  
     //codigo de correo elctronico

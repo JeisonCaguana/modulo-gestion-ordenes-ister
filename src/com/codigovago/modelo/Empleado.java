@@ -7,166 +7,169 @@ package com.codigovago.modelo;
 
 /**
  *
- * @author Jeison / Código Vago - www.codigovago.com 
+ * @author Jeison / Código Vago - www.codigovago.com
  */
 public class Empleado {
-    private int codigo_emp;
-    private String id_emp;
-    private String nombres_emp;
-    private String apellido_emp;
-    private String telefono_emp;
-    private String direccion_emp;
-    private String correo_emp;
-    private String cargo_emp;
 
-    public Empleado(int codigo_emp, String id_emp, String nombres_emp, String apellido_emp, String telefono_emp, String direccion_emp, String correo_emp, String cargo_emp) {
-        this.codigo_emp = codigo_emp;
-        this.id_emp = id_emp;
-        this.nombres_emp = nombres_emp;
-        this.apellido_emp = apellido_emp;
-        this.telefono_emp = telefono_emp;
-        this.direccion_emp = direccion_emp;
-        this.correo_emp = correo_emp;
-        this.cargo_emp = cargo_emp;
-    }
-    public Empleado(String id_emp, String nombres_emp, String apellido_emp, String telefono_emp, String direccion_emp, String correo_emp, String cargo_emp) {
-        this.id_emp = id_emp;
-        this.nombres_emp = nombres_emp;
-        this.apellido_emp = apellido_emp;
-        this.telefono_emp = telefono_emp;
-        this.direccion_emp = direccion_emp;
-        this.correo_emp = correo_emp;
-        this.cargo_emp = cargo_emp;
-    }
-    public Empleado(String correo_emp) {
-        this.correo_emp = correo_emp; 
-    }
-    public void imprimir (Empleado empleado){ 
-        System.out.println("CEDULA: "+empleado.getId_emp()); 
-        System.out.println("NOMBRES: "+empleado.getNombres_emp()); 
-        System.out.println("APELLIDOS: "+empleado.getApellido_emp()); 
-        System.out.println("TELEFONO: "+empleado.getTelefono_emp()); 
-        System.out.println("DIRECCION: "+empleado.getDireccion_emp()); 
-        System.out.println("CORREO: "+empleado.getCorreo_emp());
-        System.out.println("CARGO: "+empleado.getCargo_emp()); 
+    private int emp_codigo;
+    private String emp_id;//cedula...
+    private String emp_cargo;
+    private String emp_nombre;
+    private String emp_apellido;
+    private String emp_telefono;
+    private String emp_direccion;
+    private String emp_correo;
+    private String emp_turno;
 
-    }
     /**
-     * @return the codigo_emp
+     * @return the emp_codigo
      */
-    public int getCodigo_emp() {
-        return codigo_emp;
+    public int getEmp_codigo() {
+        return emp_codigo;
     }
 
     /**
-     * @param codigo_emp the codigo_emp to set
+     * @param emp_codigo the emp_codigo to set
      */
-    public void setCodigo_emp(int codigo_emp) {
-        this.codigo_emp = codigo_emp;
+    public void setEmp_codigo(int emp_codigo) {
+        this.emp_codigo = emp_codigo;
     }
 
     /**
-     * @return the id_emp
+     * @return the emp_id
      */
-    public String getId_emp() {
-        return id_emp;
+    public String getEmp_id() {
+        return emp_id;
     }
 
     /**
-     * @param id_emp the id_emp to set
+     * @param emp_id the emp_id to set
      */
-    public void setId_emp(String id_emp) {
-        this.id_emp = id_emp;
+    public void setEmp_id(String emp_id) {
+        this.emp_id = emp_id;
     }
 
     /**
-     * @return the nombres_emp
+     * @return the emp_cargo
      */
-    public String getNombres_emp() {
-        return nombres_emp;
+    public String getEmp_cargo() {
+        return emp_cargo;
     }
 
     /**
-     * @param nombres_emp the nombres_emp to set
+     * @param emp_cargo the emp_cargo to set
      */
-    public void setNombres_emp(String nombres_emp) {
-        this.nombres_emp = nombres_emp;
+    public void setEmp_cargo(String emp_cargo) {
+        this.emp_cargo = emp_cargo;
     }
 
     /**
-     * @return the apellido_emp
+     * @return the emp_nombre
      */
-    public String getApellido_emp() {
-        return apellido_emp;
+    public String getEmp_nombre() {
+        return emp_nombre;
     }
 
     /**
-     * @param apellido_emp the apellido_emp to set
+     * @param emp_nombre the emp_nombre to set
      */
-    public void setApellido_emp(String apellido_emp) {
-        this.apellido_emp = apellido_emp;
+    public void setEmp_nombre(String emp_nombre) {
+        this.emp_nombre = emp_nombre;
     }
 
     /**
-     * @return the telefono_emp
+     * @return the emp_apellido
      */
-    public String getTelefono_emp() {
-        return telefono_emp;
+    public String getEmp_apellido() {
+        return emp_apellido;
     }
 
     /**
-     * @param telefono_emp the telefono_emp to set
+     * @param emp_apellido the emp_apellido to set
      */
-    public void setTelefono_emp(String telefono_emp) {
-        this.telefono_emp = telefono_emp;
+    public void setEmp_apellido(String emp_apellido) {
+        this.emp_apellido = emp_apellido;
     }
 
     /**
-     * @return the direccion_emp
+     * @return the emp_telefono
      */
-    public String getDireccion_emp() {
-        return direccion_emp;
+    public String getEmp_telefono() {
+        return emp_telefono;
     }
 
     /**
-     * @param direccion_emp the direccion_emp to set
+     * @param emp_telefono the emp_telefono to set
      */
-    public void setDireccion_emp(String direccion_emp) {
-        this.direccion_emp = direccion_emp;
+    public void setEmp_telefono(String emp_telefono) {
+        this.emp_telefono = emp_telefono;
     }
 
     /**
-     * @return the correo_emp
+     * @return the emp_direccion
      */
-    public String getCorreo_emp() {
-        return correo_emp;
+    public String getEmp_direccion() {
+        return emp_direccion;
     }
 
     /**
-     * @param correo_emp the correo_emp to set
+     * @param emp_direccion the emp_direccion to set
      */
-    public void setCorreo_emp(String correo_emp) {
-        this.correo_emp = correo_emp;
+    public void setEmp_direccion(String emp_direccion) {
+        this.emp_direccion = emp_direccion;
     }
 
     /**
-     * @return the cargo_emp
+     * @return the emp_correo
      */
-    public String getCargo_emp() {
-        return cargo_emp;
+    public String getEmp_correo() {
+        return emp_correo;
     }
 
     /**
-     * @param cargo_emp the cargo_emp to set
+     * @param emp_correo the emp_correo to set
      */
-    public void setCargo_emp(String cargo_emp) {
-        this.cargo_emp = cargo_emp;
+    public void setEmp_correo(String emp_correo) {
+        this.emp_correo = emp_correo;
     }
 
-    public void getId_emp(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    /**
+     * @return the emp_turno
+     */
+    public String getEmp_turno() {
+        return emp_turno;
     }
-    
-    
-    
+
+    /**
+     * @param emp_turno the emp_turno to set
+     */
+    public void setEmp_turno(String emp_turno) {
+        this.emp_turno = emp_turno;
+    }
+
+    public void imprimir(Empleado empleado) {
+        System.out.println("CEDULA: " + empleado.getEmp_id());
+        System.out.println("NOMBRES: " + empleado.getEmp_nombre());
+        System.out.println("APELLIDOS: " + empleado.getEmp_apellido());
+        System.out.println("TELEFONO: " + empleado.getEmp_telefono());
+        System.out.println("DIRECCION: " + empleado.getEmp_direccion());
+        System.out.println("CORREO: " + empleado.getEmp_correo());
+        System.out.println("CARGO: " + empleado.getEmp_cargo());
+        System.out.println("CARGO: " + empleado.getEmp_turno());
+
+    }
+
+    public Empleado(int emp_codigo, String emp_id, String emp_cargo, String emp_nombre, String emp_apellido, String emp_telefono, String emp_direccion, String emp_correo, String emp_turno) {
+        this.emp_codigo = emp_codigo;
+        this.emp_id = emp_id;
+        this.emp_cargo = emp_cargo;
+        this.emp_nombre = emp_nombre;
+        this.emp_apellido = emp_apellido;
+        this.emp_telefono = emp_telefono;
+        this.emp_direccion = emp_direccion;
+        this.emp_correo = emp_correo;
+        this.emp_turno = emp_turno;
+    }
+
+   
 }

@@ -125,7 +125,7 @@ public class FrmPedido extends javax.swing.JFrame {
         getContentPane().add(lblNumMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 130, -1));
 
         FondoOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/FonfoFrmOrden.png"))); // NOI18N
-        getContentPane().add(FondoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 640));
+        getContentPane().add(FondoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 750));
 
         btnPreparar1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnPreparar1.setText("Preparar");

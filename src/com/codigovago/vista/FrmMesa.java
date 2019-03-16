@@ -169,7 +169,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMesa8ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 140, 90, 60));
+        getContentPane().add(btnMesa8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 140, 90, 60));
 
         btnMesa9.setBorder(null);
         btnMesa9.setBorderPainted(false);
@@ -181,7 +181,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMesa9ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 210, 90, 60));
+        getContentPane().add(btnMesa9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 210, 90, 60));
 
         btnMesa10.setBorder(null);
         btnMesa10.setBorderPainted(false);
@@ -193,7 +193,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMesa10ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 280, 90, 60));
+        getContentPane().add(btnMesa10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 280, 90, 60));
 
         btnMesa11.setBorder(null);
         btnMesa11.setBorderPainted(false);
@@ -205,7 +205,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMesa11ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 350, 90, 70));
+        getContentPane().add(btnMesa11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 350, 90, 70));
 
         btnMesa12.setBorder(null);
         btnMesa12.setBorderPainted(false);
@@ -217,7 +217,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMesa12ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 430, 90, 60));
+        getContentPane().add(btnMesa12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 430, 90, 60));
 
         btnMesa13.setBorder(null);
         btnMesa13.setBorderPainted(false);
@@ -229,7 +229,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMesa13ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 500, 90, 70));
+        getContentPane().add(btnMesa13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 500, 90, 70));
 
         btnMesa14.setBorder(null);
         btnMesa14.setBorderPainted(false);
@@ -241,7 +241,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMesa14ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMesa14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 580, 80, 70));
+        getContentPane().add(btnMesa14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 580, 90, 70));
 
         btnMesa15.setBorder(null);
         btnMesa15.setBorderPainted(false);
@@ -302,12 +302,12 @@ public class FrmMesa extends javax.swing.JFrame {
         lblNombre.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Nombre Empleado");
-        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, -1, -1));
+        getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
 
         lblFecha.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         lblFecha.setForeground(new java.awt.Color(255, 255, 255));
         lblFecha.setText("Fecha y Hora");
-        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 30, -1, -1));
+        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 30, -1, -1));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/max.png"))); // NOI18N
         btnSalir.setBorderPainted(false);
@@ -320,7 +320,7 @@ public class FrmMesa extends javax.swing.JFrame {
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 50, 50));
 
-        FondoComanda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/Mesas1.png"))); // NOI18N
+        FondoComanda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/Mesas2.png"))); // NOI18N
         getContentPane().add(FondoComanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

@@ -28,68 +28,36 @@ public class FrmPedido extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        lblNumMesa = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        btnModficar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         btnInicio = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnMinimizar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        lblNumMesa1 = new javax.swing.JLabel();
-        FondoOrden = new javax.swing.JLabel();
         btnPreparar1 = new javax.swing.JButton();
+        lblEmpleado = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDescripcion = new javax.swing.JTextArea();
+        btnModficar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        FondoOrden = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null}
-            },
-            new String [] {
-                "NUMERO", "MESA", "DESCRIPCION", "PRECIO"
-            }
-        ));
-        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 157, 600, 370));
-
-        lblNumMesa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblNumMesa.setText("Mesa: 1");
-        getContentPane().add(lblNumMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 130, -1));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Descripción");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 290, 140));
-
-        btnModficar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnModficar.setText("Modificar");
-        getContentPane().add(btnModficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 160, 50));
-
-        btnCancelar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         btnCancelar.setText("Cancelar");
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 280, 160, 50));
+        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 460, 160, 50));
 
-        btnInicio.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnInicio.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         btnInicio.setText("INICIO");
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 70, 160, 50));
+        getContentPane().add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 160, 50));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/max.png"))); // NOI18N
         btnSalir.setBorderPainted(false);
@@ -100,7 +68,7 @@ public class FrmPedido extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 0, 50, 50));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 50, 50));
 
         btnMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/min.png"))); // NOI18N
         btnMinimizar.setBorderPainted(false);
@@ -110,26 +78,47 @@ public class FrmPedido extends javax.swing.JFrame {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 0, 40, 50));
+        getContentPane().add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, 40, 50));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código Vago", "Perfil", "Salir" }));
-        jComboBox1.setBorder(null);
-        jComboBox1.setFocusTraversalPolicyProvider(true);
-        jComboBox1.setInheritsPopupMenu(true);
-        jComboBox1.setOpaque(false);
-        jComboBox1.setVerifyInputWhenFocusTarget(false);
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, 100, 30));
-
-        lblNumMesa1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblNumMesa1.setText("Pedido: 1");
-        getContentPane().add(lblNumMesa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 130, -1));
-
-        FondoOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/FonfoFrmOrden.png"))); // NOI18N
-        getContentPane().add(FondoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 750));
-
-        btnPreparar1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnPreparar1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         btnPreparar1.setText("Preparar");
-        getContentPane().add(btnPreparar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, 160, 50));
+        getContentPane().add(btnPreparar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, 160, 50));
+
+        lblEmpleado.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        lblEmpleado.setForeground(new java.awt.Color(255, 255, 255));
+        lblEmpleado.setText("Nombre Empleado");
+        getContentPane().add(lblEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, -1, -1));
+
+        lblFecha.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        lblFecha.setText("Fecha y Hora");
+        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 30, -1, -1));
+
+        txtDescripcion.setColumns(20);
+        txtDescripcion.setRows(5);
+        jScrollPane1.setViewportView(txtDescripcion);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 260, 140));
+
+        btnModficar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        btnModficar.setText("Modificar");
+        getContentPane().add(btnModficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 160, 50));
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Descripción");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setBorder(null);
+        jTextArea2.setOpaque(false);
+        jScrollPane3.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 330, 450, 340));
+
+        FondoOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/Comand.png"))); // NOI18N
+        getContentPane().add(FondoOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1350, 730));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -156,13 +145,12 @@ public class FrmPedido extends javax.swing.JFrame {
     private javax.swing.JButton btnModficar;
     private javax.swing.JButton btnPreparar1;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel lblNumMesa;
-    private javax.swing.JLabel lblNumMesa1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JLabel lblEmpleado;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JTextArea txtDescripcion;
     // End of variables declaration//GEN-END:variables
 }

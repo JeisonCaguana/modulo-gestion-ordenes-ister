@@ -31,6 +31,7 @@ public class ClaseControl{
         //getActualizaClave(new Usuario("jcaguana1", "123"));
         //getRecuperarClave(new Empleado("jeisoncaguana@gmail.com"));
         roles.index();
+        //System.out.println(empleados.buscarDatosUsuario("1"));
  
     }
     public static void getBuscaUsuario( Usuario usuario){
@@ -46,6 +47,8 @@ public class ClaseControl{
             System.out.println("No grabo con exito");
         }
     }
+    
+    
 //    public static void getActualizaEmpleado( Empleado empleado ){
 //        if ( empleados.actualizarEmpleado( empleado ) ) {
 //            System.out.println("Se actualizo con exito");

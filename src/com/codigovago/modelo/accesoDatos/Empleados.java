@@ -86,29 +86,31 @@ public class Empleados extends Conexion{
             }
         } 
     }
-    public boolean buscarDatosUsuario( Empleado empleado ){ 
-        String query = "SELECT emp_nombre,emp_apellido,emp_turno FROM empleado WHERE emp_codigo = ? LIMIT 1;";
+    public String buscarDatosUsuario(int codigoEmpleado ){ 
+        String query = "SELECT emp_nombre,emp_apellido,emp_turno FROM empleado WHERE emp_codigo = '"+codigoEmpleado+"' LIMIT 1;";
+//        String[] datos = new String[2];
+        String nombre="";
         try {  
-            ps = conexion.prepareStatement( query );
-            ps.setInt(1, empleado.getEmp_codigo());   
+            ps = conexion.prepareStatement( query );   
             rs = ps.executeQuery();
             
             if ( rs.next() ) {
-//////////////////////////////////////////////////               if ( empleado.getEmp_codigo().equals(rs.getString( 2 )) ) {
-//////////////////////////////////////////////////                    empleado.setCodigo_uss(rs.getInt(1));
-////////////////////////////////////////////////////                    empleado.setCargo_emp(rs.getString(4));
-//////////////////////////////////////////////////                    //roles.rolesUsuario( usuario );
-//////////////////////////////////////////////////                return true;
-//////////////////////////////////////////////////                } else {
-//////////////////////////////////////////////////                    JOptionPane.showMessageDialog(null,"error 505");
-//////////////////////////////////////////////////                    return false;
-//////////////////////////////////////////////////                }
+                 StringTokenizer primerNombre =  new StringTokenizer( rs.getString(1) );
+                 StringTokenizer primerApellido =  new StringTokenizer( rs.getString(2) );
+                while (primerNombre.hasMoreElements() && primerApellido.hasMoreElements()){
+                    nombre+= primerNombre.nextElement()+" "+primerApellido.nextElement();
+                    break;
+                } 
             }
+            return nombre;
+            
         } catch (SQLException ex) {
             System.out.println( ex.toString() );
         } 
-        return false;
+        return null;
     }
+    
+    
 //    public boolean actualizarEmpleado( Empleado empleado ) {
 //        String query = "UPDATE empleado SET nombres_emp='"+empleado.getNombres_emp()+"',apellido_emp='"+empleado.getApellido_emp()+"',telefono_emp='"+empleado.getTelefono_emp()+"',direccion_emp='"+empleado.getDireccion_emp()+"',correo_emp='"+empleado.getCorreo_emp()+"' WHERE id_emp='"+empleado.getId_emp()+"';";
 //        try {

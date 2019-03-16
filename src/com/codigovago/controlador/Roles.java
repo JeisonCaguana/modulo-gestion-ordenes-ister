@@ -43,7 +43,7 @@ public class Roles {
                 rolChef();
                 break;
             default:
-                JOptionPane.showMessageDialog(null, "eror");
+                JOptionPane.showMessageDialog(null, "error");
                 break;
         }
     }

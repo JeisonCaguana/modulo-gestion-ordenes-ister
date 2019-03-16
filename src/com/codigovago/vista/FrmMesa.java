@@ -6,6 +6,7 @@
 package com.codigovago.vista;
 
 import com.codigovago.controlador.Roles;
+import com.codigovago.modelo.accesoDatos.Empleados;
 
 /**
  *
@@ -17,11 +18,12 @@ public class FrmMesa extends javax.swing.JFrame {
      * Creates new form FrmComandero
      */
     public static int ban; 
+    Empleados empleados = new Empleados();
     Roles Roles = new Roles();
     public FrmMesa() {
         this.setUndecorated(true);
         initComponents();
-        lblNombre.setText("Mesero: "+Roles.idEmpleado); 
+        lblNombre.setText("Mesero: "+empleados.buscarDatosUsuario(Roles.idEmpleado));
     }
     
     void cargarMesa(int ban) {

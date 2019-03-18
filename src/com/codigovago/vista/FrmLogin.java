@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 package com.codigovago.vista;
-
-import static com.codigovago.controlador.ClaseControl.getBuscaUsuario;
+ 
+import com.codigovago.modelo.Empleado;
 import com.codigovago.modelo.Usuario;
+import com.codigovago.modelo.accesoDatos.Empleados;
 import com.codigovago.modelo.accesoDatos.Login;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,7 @@ public class FrmLogin extends javax.swing.JFrame {
      * Creates new form FrmLogin
      */
     static Login login = new Login();
+    Usuario usuario = new Usuario();
     public FrmLogin() {
          this.setUndecorated(true);
          initComponents();
@@ -89,6 +91,11 @@ public class FrmLogin extends javax.swing.JFrame {
 
         btnOlvideClave.setBorder(null);
         btnOlvideClave.setContentAreaFilled(false);
+        btnOlvideClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOlvideClaveActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnOlvideClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 650, 300, 40));
 
         FondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/Login1.png"))); // NOI18N
@@ -106,12 +113,26 @@ public class FrmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizarActionPerformed
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
-        if (txtUsuario.getText().equals("") || txtClave.getText().equals("")) {
-            JOptionPane.showMessageDialog(null,"Error 40613, Validación no encontrada");
-        }else{
-            getBuscaUsuario(new Usuario(txtUsuario.getText(), txtClave.getText()));  
+        
+        char[] clave = txtClave.getPassword();
+        String clave1 = new String(clave);
+        
+        if (txtUsuario.getText().equals("") || clave1.equals("")) {
+            JOptionPane.showMessageDialog(null, "Los campos se encuentran en blanco. \nLlene sus datos");
+        }else {
+            usuario.setUsuario_uss(txtUsuario.getText());
+            usuario.setClave_uss(clave1);
+            if ( login.buscarUsuario(txtUsuario.getText(), clave1) ) {
+                this.setVisible(false);
+            } 
         }
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
+    private void btnOlvideClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOlvideClaveActionPerformed
+        // TODO add your handling code here:
+        FrmCorreo ventana = new FrmCorreo();
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btnOlvideClaveActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FondoLogin;

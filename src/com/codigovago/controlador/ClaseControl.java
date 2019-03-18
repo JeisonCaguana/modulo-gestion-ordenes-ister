@@ -9,6 +9,7 @@ package com.codigovago.controlador;
 import com.codigovago.modelo.Empleado;
 import com.codigovago.modelo.Usuario;
 import com.codigovago.modelo.accesoDatos.Conexion;
+import com.codigovago.modelo.accesoDatos.CorreoElectronico;
 import com.codigovago.modelo.accesoDatos.Empleados;
 import com.codigovago.modelo.accesoDatos.Login; 
 /**
@@ -25,17 +26,23 @@ public class ClaseControl{
     static Roles roles = new Roles();
     public static void main(String[] args) {
         //getConexion();
-//        getRegistroEmpleado( new Empleado(2, "17645364565","Mesero","Daniela Carmen", "Tene Ruiz", "0995669394", "Chunhi - Ecuador", "jeisonhenaselec2@gmail.com", "tarde"));
+//        getRegistroEmpleado( new Empleado(3, "1724196462","Mesero","Paola Alexandra", "Villa Pullay", "0983470330", "El Manantial", "alexa123villa@hotmail.com", "tarde"));
 //        getBuscaUsuario(new Usuario("dtene2", "codigovago"));
         //getActualizaEmpleado(new Empleado("0605694254", "Jessica Dayana", "Caguana Gutierres", "0995669399", "Alausí - Ecuador", "jessicadayana@gmail.com", "mesero"));
         //getActualizaClave(new Usuario("jcaguana1", "123"));
         //getRecuperarClave(new Empleado("jeisoncaguana@gmail.com"));
         roles.index();
-        //System.out.println(empleados.buscarDatosUsuario("1"));
- 
-    }
-    public static void getBuscaUsuario( Usuario usuario){
-        login.buscarUsuario(usuario);
+//       empleados.cambioClaveUsu("123", "1");
+        
+        //System.out.println(empleados.buscarApellido(""));       
+//        //System.out.println(empleados.numRandom());
+//      CorreoElectronico c = new CorreoElectronico();
+////        c.setCorreo("alexa123villa@hotmail.com", "Recuperar clave");
+//    c.cambioClave("pao","alexa123villa@hotmail.com");
+
+
+
+
     }
     public static void getConexion(){
         conexion.getConexion();

@@ -33,10 +33,10 @@ public class Roles {
         JOptionPane.showMessageDialog(null, "Interfaz Chef");
     }
 
-    public void rolesUsuario(Usuario usuario) {
-        switch (usuario.getCargo_emp()) {
+    public void rolesUsuario(int id, String Cargo) {
+        switch (Cargo) {
             case "Mesero":
-                Roles.idEmpleado =usuario.getCodigo_uss();
+                Roles.idEmpleado =id;
                 rolMesero();
                 break;
             case "Chef":

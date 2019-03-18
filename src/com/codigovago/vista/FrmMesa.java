@@ -18,12 +18,16 @@ public class FrmMesa extends javax.swing.JFrame {
      * Creates new form FrmComandero
      */
     public static int ban; 
+    public static int idEmp;
+    
     Empleados empleados = new Empleados();
     Roles Roles = new Roles();
     public FrmMesa() {
         this.setUndecorated(true);
         initComponents();
         lblNombre.setText("Mesero: "+empleados.buscarDatosUsuario(Roles.idEmpleado));
+//        FrmLogin loggin = new FrmLogin();
+//        this.setVisible(false);
     }
     
     void cargarMesa(int ban) {
@@ -60,7 +64,8 @@ public class FrmMesa extends javax.swing.JFrame {
         lblNombre = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
-        FondoComanda = new javax.swing.JLabel();
+        btnUsuario = new javax.swing.JButton();
+        lblUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1360, 740));
@@ -75,7 +80,7 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnMinimizarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, 40, 50));
+        getContentPane().add(btnMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, 40, 50));
 
         btnMesa1.setBorder(null);
         btnMesa1.setBorderPainted(false);
@@ -311,7 +316,7 @@ public class FrmMesa extends javax.swing.JFrame {
         lblFecha.setText("Fecha y Hora");
         getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 30, -1, -1));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/max.png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/back.png"))); // NOI18N
         btnSalir.setBorderPainted(false);
         btnSalir.setContentAreaFilled(false);
         btnSalir.setDefaultCapable(false);
@@ -320,10 +325,18 @@ public class FrmMesa extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 10, 50, 50));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, 50, 50));
 
-        FondoComanda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/Mesas2.png"))); // NOI18N
-        getContentPane().add(FondoComanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        btnUsuario.setContentAreaFilled(false);
+        btnUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 110, 80));
+
+        lblUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/Mesas3.png"))); // NOI18N
+        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -332,84 +345,112 @@ public class FrmMesa extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMinimizarActionPerformed
     private void btnMesa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa1ActionPerformed
         cargarMesa(1);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa1ActionPerformed
     private void btnMesa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa2ActionPerformed
         cargarMesa(2);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa2ActionPerformed
     private void btnMesa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa3ActionPerformed
         cargarMesa(3);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa3ActionPerformed
     private void btnMesa4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa4ActionPerformed
         cargarMesa(4);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa4ActionPerformed
     private void btnMesa5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa5ActionPerformed
         cargarMesa(5);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa5ActionPerformed
     private void btnMesa6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa6ActionPerformed
         cargarMesa(6);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa6ActionPerformed
     private void btnMesa7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa7ActionPerformed
         cargarMesa(7);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa7ActionPerformed
     private void btnMesa8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa8ActionPerformed
         cargarMesa(8);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa8ActionPerformed
     private void btnMesa9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa9ActionPerformed
         cargarMesa(9);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa9ActionPerformed
     private void btnMesa10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa10ActionPerformed
         cargarMesa(10);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa10ActionPerformed
     private void btnMesa11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa11ActionPerformed
         cargarMesa(11);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa11ActionPerformed
     private void btnMesa12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa12ActionPerformed
         cargarMesa(12);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa12ActionPerformed
     private void btnMesa13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa13ActionPerformed
         cargarMesa(13);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa13ActionPerformed
     private void btnMesa14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa14ActionPerformed
         cargarMesa(14);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa14ActionPerformed
 
     private void btnMesa15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa15ActionPerformed
         // TODO add your handling code here:
         cargarMesa(15);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa15ActionPerformed
-
-    
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
+ 
     private void btnMesa20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa20ActionPerformed
         // TODO add your handling code here:
         cargarMesa(20);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa20ActionPerformed
 
     private void btnMesa16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa16ActionPerformed
         // TODO add your handling code here:
         cargarMesa(16);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa16ActionPerformed
 
     private void btnMesa17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa17ActionPerformed
         // TODO add your handling code here:
         cargarMesa(17);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa17ActionPerformed
 
     private void btnMesa18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa18ActionPerformed
         // TODO add your handling code here:
         cargarMesa(18);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa18ActionPerformed
 
     private void btnMesa19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMesa19ActionPerformed
         // TODO add your handling code here:
         cargarMesa(19);
+        this.setVisible(false);
     }//GEN-LAST:event_btnMesa19ActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        Roles.index();
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioActionPerformed
+        // TODO add your handling code here:
+        FrmPerfil perfil = new FrmPerfil();
+        idEmp = Roles.idEmpleado;
+        perfil.setVisible(true);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_btnUsuarioActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel FondoComanda;
     private javax.swing.JButton btnMesa1;
     private javax.swing.JButton btnMesa10;
     private javax.swing.JButton btnMesa11;
@@ -432,7 +473,9 @@ public class FrmMesa extends javax.swing.JFrame {
     private javax.swing.JButton btnMesa9;
     private javax.swing.JButton btnMinimizar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnUsuario;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -56,27 +56,32 @@ public class FrmComandas extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCancelar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        btnCancelar.setText("Modificar pedido");
-        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 610, 180, 50));
+        btnCancelar.setText("Modificar");
+        getContentPane().add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 610, 250, 50));
 
         btnPreparar1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         btnPreparar1.setText("Cerrar cuenta");
-        getContentPane().add(btnPreparar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 160, 50));
+        btnPreparar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreparar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPreparar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 250, 50));
 
         txtDescripcion.setColumns(20);
         txtDescripcion.setRows(5);
         jScrollPane1.setViewportView(txtDescripcion);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 250, 70));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 250, 100));
 
         btnAgregar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         btnAgregar.setText("Agregar");
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 160, 50));
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 250, 50));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Observaciones (campo opcional)");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
         jTextArea3.setColumns(20);
         jTextArea3.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
@@ -85,7 +90,7 @@ public class FrmComandas extends javax.swing.JFrame {
         jTextArea3.setOpaque(false);
         jScrollPane4.setViewportView(jTextArea3);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 210, 440, 470));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 260, 450, 420));
 
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
@@ -94,7 +99,7 @@ public class FrmComandas extends javax.swing.JFrame {
         jTextArea2.setOpaque(false);
         jScrollPane3.setViewportView(jTextArea2);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 210, 440, 470));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 440, 420));
         getContentPane().add(lblMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 160, 30));
         getContentPane().add(lblMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 60, 30));
         getContentPane().add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 200, 60, 30));
@@ -106,6 +111,14 @@ public class FrmComandas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPreparar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreparar1ActionPerformed
+        // TODO add your handling code here:
+        FrmMesa mesa = new FrmMesa();
+        mesa.setVisible(true);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_btnPreparar1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FondoOrden;

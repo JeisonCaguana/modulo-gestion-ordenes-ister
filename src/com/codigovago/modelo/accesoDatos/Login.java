@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.codigovago.modelo.accesoDatos;
- 
+
 import com.codigovago.controlador.Roles;
 import com.codigovago.modelo.Empleado;
 import com.codigovago.modelo.Usuario;
+import com.codigovago.vista.FrmMesa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,38 +17,41 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Jeison / Código Vago - www.codigovago.com 
+ * @author Jeison / Código Vago - www.codigovago.com
  */
-public class Login extends Conexion{
+public class Login extends Conexion {
+
     static CorreoElectronico correo = new CorreoElectronico();
-    static PreparedStatement ps = null;
-    static  Roles roles = new Roles();
-    static ResultSet rs = null;
-    Connection conexion = getConexion();
+    static Roles roles = new Roles();
     
-    public boolean buscarUsuario( Usuario usuario ){ 
-        String query = "SELECT usu_codigo,usu_usuario,usu_contrasena,usu_cargo FROM usuario WHERE usu_usuario = ? AND usu_contrasena = ? LIMIT 1;";
-        try {  
-            ps = conexion.prepareStatement( query );
-            ps.setString( 1, usuario.getUsuario_uss()); 
-            ps.setString( 2, usuario.getClave_uss()); 
+
+    public boolean buscarUsuario(String usuario, String clave) {
+        String query = "SELECT usu_codigo,usu_usuario,usu_contrasena,usu_cargo FROM usuario WHERE usu_usuario = '"+usuario+"' AND usu_contrasena = '"+clave+"'";
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        boolean ban = false;
+        Connection conexion = getConexion();
+        String uss="";
+        String pass="";
+        try {
+            ps = conexion.prepareStatement(query); 
             rs = ps.executeQuery();
-            
-            if ( rs.next() ) {
-                if ( usuario.getUsuario_uss().equals(rs.getString( 2 )) && usuario.getClave_uss().equals(rs.getString( 3 ))  ) {
-                    usuario.setCodigo_uss(rs.getInt(1));
-                    usuario.setCargo_emp(rs.getString(4));
-                    roles.rolesUsuario( usuario );
-                return true;
-                } else {
-                    JOptionPane.showMessageDialog(null,"error 505");
-                    return false;
-                }
+            if (rs.next()) {
+               uss = rs.getString(2);
+               pass =rs.getString(3);
             }
+            if (usuario.equals(uss) && clave.equals(pass)) {
+                int codigo =rs.getInt(1);
+                String cargo =  rs.getString(4);
+                roles.rolesUsuario(codigo, cargo);
+                ban = true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario y/o Clave incorrectos");
+            } 
         } catch (SQLException ex) {
-            System.out.println( ex.toString() );
-        } 
-        return false;
+            ban = false;
+        }
+        return ban;
     }
 
 //    public boolean recuperarClave( Empleado empleado ){

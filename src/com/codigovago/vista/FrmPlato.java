@@ -5,6 +5,9 @@
  */
 package com.codigovago.vista;
 
+import com.codigovago.controlador.Roles;
+import com.codigovago.modelo.accesoDatos.Empleados;
+
 /**
  *
  * @author JEISON
@@ -14,12 +17,18 @@ public class FrmPlato extends javax.swing.JFrame {
     /**
      * Creates new form FrmOrden
      */
+    
+    Empleados empleados = new Empleados();
+    Roles Roles = new Roles();
+    
     FrmMesa FrmMesa = new FrmMesa();
     public FrmPlato() {
         this.setUndecorated(true);
         initComponents();
         lblNumMesa.setText("Mesa: "+FrmMesa.ban);
+        lblMesero.setText(empleados.buscarDatosUsuario(Roles.idEmpleado));
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -42,7 +51,7 @@ public class FrmPlato extends javax.swing.JFrame {
         btnMinimizar = new javax.swing.JButton();
         cbxTipoComida = new javax.swing.JComboBox<>();
         txtCantidad = new javax.swing.JTextField();
-        lblEmpleado = new javax.swing.JLabel();
+        lblMesero = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         lblNumMesa1 = new javax.swing.JLabel();
         FondoOrden = new javax.swing.JLabel();
@@ -118,7 +127,7 @@ public class FrmPlato extends javax.swing.JFrame {
         });
         getContentPane().add(btnComandas, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 570, 160, 50));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/max.png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/codigovago/assets/icons/back.png"))); // NOI18N
         btnSalir.setBorderPainted(false);
         btnSalir.setContentAreaFilled(false);
         btnSalir.setDefaultCapable(false);
@@ -144,10 +153,10 @@ public class FrmPlato extends javax.swing.JFrame {
         getContentPane().add(cbxTipoComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 310, 40));
         getContentPane().add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 70, 40));
 
-        lblEmpleado.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        lblEmpleado.setForeground(new java.awt.Color(255, 255, 255));
-        lblEmpleado.setText("Nombre Empleado");
-        getContentPane().add(lblEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
+        lblMesero.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        lblMesero.setForeground(new java.awt.Color(255, 255, 255));
+        lblMesero.setText("Nombre Empleado");
+        getContentPane().add(lblMesero, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, -1, -1));
 
         lblFecha.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         lblFecha.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,6 +178,9 @@ public class FrmPlato extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        FrmMesa mesa = new FrmMesa();
+        mesa.setVisible(true);
+        
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
     private void btnMinimizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMinimizarActionPerformed
@@ -201,8 +213,8 @@ public class FrmPlato extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel lblEmpleado;
     private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblMesero;
     private javax.swing.JLabel lblNumMesa;
     private javax.swing.JLabel lblNumMesa1;
     private javax.swing.JTextField txtCantidad;

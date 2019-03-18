@@ -15,16 +15,16 @@ public class Usuario {
     private String clave_uss;
     private String cargo_emp;
 
-    public Usuario(int codigo_uss, String usuario_uss, String clave_uss, String cargo_emp) {
-        this.codigo_uss = codigo_uss;
-        this.usuario_uss = usuario_uss;
-        this.clave_uss = clave_uss;
-        this.cargo_emp = cargo_emp;
-    }
-    public Usuario(String usuario_uss, String clave_uss) {
-        this.usuario_uss = usuario_uss;
-        this.clave_uss = clave_uss; 
-    }
+//    public Usuario(int codigo_uss, String usuario_uss, String clave_uss, String cargo_emp) {
+//        this.codigo_uss = codigo_uss;
+//        this.usuario_uss = usuario_uss;
+//        this.clave_uss = clave_uss;
+//        this.cargo_emp = cargo_emp;
+//    }
+//    public Usuario(String usuario_uss, String clave_uss) {
+//        this.usuario_uss = usuario_uss;
+//        this.clave_uss = clave_uss; 
+//    }
     public void imprimir (Usuario usuario){ 
         System.out.println("USUARIO: "+usuario.getUsuario_uss());
         System.out.println("CLAVE: "+usuario.getClave_uss());
